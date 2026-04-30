@@ -18,10 +18,10 @@
             --accent-color: #3b82f6; 
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            --card-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.8);
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --section-padding: 100px 8%;
-            --mobile-padding: 60px 5%;
+            --section-padding: 100px 10%;
+            --mobile-padding: 70px 6%;
         }
 
         * {
@@ -55,34 +55,34 @@
             align-items: center;
             transition: opacity 1s ease, visibility 1s;
         }
-        .loader-logo { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; animation: pulse 2s infinite; }
+        .loader-logo { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 25px; animation: pulse 2s infinite; }
         .loader-logo span { color: var(--accent-color); }
-        .loader-bar { width: 200px; height: 2px; background: rgba(255,255,255,0.1); position: relative; overflow: hidden; border-radius: 10px; }
+        .loader-bar { width: 220px; height: 3px; background: rgba(255,255,255,0.05); position: relative; overflow: hidden; border-radius: 10px; }
         .loader-progress { width: 0%; height: 100%; background: var(--accent-color); position: absolute; animation: load 2.5s forwards ease-in-out; box-shadow: 0 0 15px var(--accent-color); }
 
         @keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
-        @keyframes pulse { 0%, 100% { opacity: 0.5; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
 
-        /* --- MUSIC & WA FLOATING (Adaptive) --- */
+        /* --- CONTROLS --- */
         .music-control {
             position: fixed;
             bottom: 30px;
             left: 30px;
             z-index: 100;
             background: var(--glass-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             padding: 0 20px;
             border-radius: 50px;
             cursor: pointer;
-            height: 50px;
+            height: 52px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: var(--transition);
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            box-shadow: var(--card-shadow);
         }
-        .music-control:hover { transform: scale(1.05); border-color: var(--accent-color); }
+        .music-control:hover { transform: translateY(-5px); border-color: var(--accent-color); }
 
         .wa-float {
             position: fixed;
@@ -96,39 +96,39 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 100;
             transition: var(--transition);
             text-decoration: none;
         }
-        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+        .wa-float:hover { transform: scale(1.1) rotate(15deg); }
 
         /* --- SCROLL ANIMATION --- */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- NAVBAR (PC vs Mobile) --- */
+        /* --- NAVBAR --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 8%;
+            padding: 22px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 90;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(15px);
+            background: rgba(5,5,5,0.7);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
         }
-        .logo { font-size: 1.4rem; font-weight: 800; color: white; text-decoration: none; letter-spacing: -1px; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: white; text-decoration: none; letter-spacing: -1.5px; }
         .logo span { color: var(--accent-color); }
-        .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: rgba(255,255,255,0.6); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: white; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -136,200 +136,234 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 5%;
+            padding: 0 8%;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
             position: relative;
         }
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
-            top: 15%;
+            top: 20%;
             width: 100%;
-            max-width: 600px;
-            height: 400px;
+            max-width: 800px;
+            height: 500px;
             background: var(--accent-color);
-            filter: blur(150px);
-            opacity: 0.1;
+            filter: blur(180px);
+            opacity: 0.08;
             z-index: 0;
             pointer-events: none;
         }
         .hero h1 {
-            font-size: clamp(2rem, 10vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-size: clamp(2.2rem, 9vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 25px;
             z-index: 1;
+            letter-spacing: -2px;
         }
         .hero p {
-            font-size: clamp(1rem, 4vw, 1.1rem);
-            color: rgba(255,255,255,0.6);
-            max-width: 650px;
-            margin-bottom: 40px;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: rgba(255,255,255,0.5);
+            max-width: 750px;
+            margin-bottom: 45px;
             z-index: 1;
-            padding: 0 10px;
+            line-height: 1.6;
         }
-        .btn-container { display: flex; gap: 15px; z-index: 1; width: 100%; justify-content: center; }
 
+        .btn-container { display: flex; gap: 20px; z-index: 1; }
         .btn {
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 60px;
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             border: none;
             text-align: center;
         }
         .btn-glow { background: white; color: black; }
-        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,255,255,0.3); }
+        .btn-glow:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255,255,255,0.4); }
         .btn-outline { background: transparent; color: white; border: 1px solid var(--glass-border); }
-        .btn-outline:hover { background: var(--glass-bg); border-color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: white; }
 
-        /* --- SECTIONS --- */
-        .section { padding: var(--section-padding); width: 100%; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 10px; }
-        .section-header p { color: #888; font-size: 0.95rem; }
+        /* --- SECTION BASE --- */
+        .section { padding: var(--section-padding); }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 15px; letter-spacing: -1px; }
+        .section-header p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; }
 
-        /* --- GAME GRID (ADAPTIVE) --- */
+        /* --- GAMES GRID --- */
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
         .game-card {
-            background: #111;
+            background: #0a0a0a;
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border-radius: 30px;
             overflow: hidden;
             transition: var(--transition);
             position: relative;
-            height: 420px;
+            height: 480px;
         }
-        .game-card:hover { transform: translateY(-10px); border-color: var(--accent-color); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2); }
-        .game-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.65); transition: 0.6s ease; }
-        .game-card:hover .game-img { filter: brightness(1); transform: scale(1.08); }
+        .game-card:hover { transform: translateY(-15px); border-color: var(--accent-color); box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15); }
+        .game-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) grayscale(20%); transition: 0.8s ease; }
+        .game-card:hover .game-img { filter: brightness(1) grayscale(0%); transform: scale(1.1); }
         .game-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%);
+            background: linear-gradient(to top, rgba(0,0,0,1) 5%, transparent 60%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 25px;
+            padding: 35px;
         }
         .game-tag {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             color: var(--accent-color);
             font-weight: 800;
-            margin-bottom: 5px;
-            padding: 4px 8px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 4px;
+            margin-bottom: 10px;
+            padding: 5px 12px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 6px;
             width: fit-content;
         }
-        .game-tag.ready { color: #2ecc71; background: rgba(46, 204, 113, 0.1); }
+        .game-tag.ready { color: #2ecc71; background: rgba(46, 204, 113, 0.15); }
+
+        /* --- INFO SECTION --- */
+        .info-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 35px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .info-content h3 { font-size: 2rem; margin-bottom: 20px; }
+        .info-content p { color: #aaa; margin-bottom: 20px; line-height: 1.7; }
+        .device-icons { display: flex; gap: 20px; font-size: 1.5rem; color: #555; }
 
         /* --- FEATURES --- */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
         .feature-item {
             text-align: center;
-            padding: 35px 20px;
+            padding: 45px 30px;
             background: var(--glass-bg);
-            border-radius: 24px;
+            border-radius: 30px;
             border: 1px solid var(--glass-border);
             transition: var(--transition);
         }
-        .feature-item:hover { transform: translateY(-5px); border-color: var(--accent-color); }
-        .feature-item i { font-size: 2.2rem; color: var(--accent-color); margin-bottom: 15px; }
+        .feature-item:hover { background: rgba(255,255,255,0.05); transform: translateY(-5px); border-color: var(--accent-color); }
+        .feature-item i { font-size: 2.8rem; color: var(--accent-color); margin-bottom: 20px; }
+        .feature-item h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .feature-item p { color: #777; font-size: 0.95rem; }
 
         /* --- PRICING --- */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
         .price-card {
-            background: var(--glass-bg);
+            background: #0a0a0a;
             border: 1px solid var(--glass-border);
-            border-radius: 28px;
-            padding: 35px 25px;
+            border-radius: 35px;
+            padding: 45px 35px;
             text-align: center;
             transition: var(--transition);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         .price-card.popular { border-color: var(--accent-color); background: rgba(59, 130, 246, 0.05); }
-        .price-name { font-size: 1rem; color: #888; margin-bottom: 10px; }
-        .price-value { font-size: 1.8rem; font-weight: 800; margin-bottom: 25px; }
-        .price-features { list-style: none; text-align: left; margin-bottom: 30px; font-size: 0.85rem; color: #ccc; }
-        .price-features li { margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .price-features i { color: #2ecc71; }
+        .badge-popular {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.65rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+        }
+        .price-name { font-size: 1.1rem; color: #777; margin-bottom: 15px; font-weight: 600; }
+        .price-value { font-size: 2.2rem; font-weight: 800; margin-bottom: 35px; color: white; }
+        .price-features { list-style: none; text-align: left; margin-bottom: 40px; flex-grow: 1; }
+        .price-features li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: #bbb; }
+        .price-features i { color: #2ecc71; font-size: 1.1rem; }
 
         /* --- FAQ --- */
-        .faq-container { max-width: 750px; margin: 0 auto; }
-        .faq-item { margin-bottom: 12px; border-radius: 16px; background: var(--glass-bg); border: 1px solid var(--glass-border); overflow: hidden; }
-        .faq-question { padding: 18px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; }
-        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s; color: #777; font-size: 0.9rem; }
-        .faq-item.active .faq-answer { padding: 0 20px 18px; max-height: 150px; }
+        .faq-container { max-width: 850px; margin: 0 auto; }
+        .faq-item { margin-bottom: 15px; border-radius: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); overflow: hidden; transition: 0.3s; }
+        .faq-question { padding: 22px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.05rem; }
+        .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); color: #888; font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.active { border-color: var(--accent-color); }
+        .faq-item.active .faq-answer { padding: 0 25px 22px; max-height: 200px; }
         .faq-item.active i { transform: rotate(180deg); color: var(--accent-color); }
 
         /* --- MODAL --- */
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             z-index: 1000;
             display: none;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(10px);
-            padding: 20px;
+            backdrop-filter: blur(20px);
+            padding: 25px;
         }
         .modal-content {
-            background: #0c0c0c;
+            background: #080808;
             width: 100%;
-            max-width: 450px;
-            border-radius: 32px;
-            padding: 40px 30px;
+            max-width: 480px;
+            border-radius: 40px;
+            padding: 50px 40px;
             border: 1px solid var(--glass-border);
             text-align: center;
             position: relative;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
         }
-        .close-modal { position: absolute; top: 20px; right: 25px; font-size: 1.2rem; cursor: pointer; color: #444; }
-        .pay-options { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
-        .pay-btn { padding: 16px; border-radius: 16px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; border: none; font-size: 0.9rem; }
+        .close-modal { position: absolute; top: 25px; right: 30px; font-size: 1.5rem; cursor: pointer; color: #333; transition: 0.3s; }
+        .close-modal:hover { color: white; }
+        .pay-options { display: flex; flex-direction: column; gap: 15px; margin-top: 35px; }
+        .pay-btn { padding: 18px; border-radius: 20px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; border: none; font-size: 1rem; transition: 0.3s; }
         .btn-wa { background: #25d366; color: white; }
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
         .btn-qris { background: white; color: black; }
-        .qris-display { display: none; margin-top: 25px; animation: fadeIn 0.5s; }
-        .qris-display img { width: 100%; max-width: 250px; border-radius: 15px; margin: 0 auto; border: 4px solid white; }
+        .btn-qris:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); }
+        .qris-display { display: none; margin-top: 30px; animation: fadeIn 0.5s; }
+        .qris-display img { width: 100%; max-width: 280px; border-radius: 25px; margin: 0 auto; border: 6px solid white; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
 
         /* --- FOOTER --- */
-        footer { padding: 60px 8% 30px; background: #080808; border-top: 1px solid var(--glass-border); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-brand p { color: #555; font-size: 0.85rem; margin-top: 15px; line-height: 1.6; }
-        .footer-links h4 { color: var(--accent-color); font-size: 0.8rem; letter-spacing: 1.5px; margin-bottom: 20px; text-transform: uppercase; }
+        footer { padding: 80px 10% 40px; background: #050505; border-top: 1px solid var(--glass-border); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 50px; }
+        .footer-brand p { color: #555; font-size: 0.95rem; margin-top: 20px; line-height: 1.8; max-width: 350px; }
+        .footer-links h4 { color: var(--accent-color); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; font-weight: 800; }
         .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #777; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
-        .footer-links a:hover { color: white; }
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: #333; font-size: 0.75rem; }
+        .footer-links li { margin-bottom: 15px; }
+        .footer-links a { color: #777; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-links a:hover { color: white; padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: #222; font-size: 0.8rem; font-weight: 500; }
 
         /* ============================================================
-           PC & MONITOR BESAR (Desktop Tweaks)
+           PC & MONITOR BESAR
            ============================================================ */
         @media (min-width: 1025px) {
-            .hero h1 { max-width: 900px; }
+            .hero h1 { max-width: 1000px; }
             .game-grid { grid-template-columns: repeat(3, 1fr); }
-            .btn-container { width: auto; }
-            .btn { min-width: 180px; }
+            .btn { min-width: 200px; }
         }
 
         /* ============================================================
@@ -338,33 +372,37 @@
         @media (max-width: 1024px) {
             .section { padding: var(--mobile-padding); }
             .game-grid { grid-template-columns: repeat(2, 1fr); }
-            nav { padding: 20px 5%; }
+            .info-box { grid-template-columns: 1fr; text-align: center; }
+            .device-icons { justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         /* ============================================================
-           HP / MOBILE (Smartphone Tweaks)
+           HP / MOBILE
            ============================================================ */
         @media (max-width: 768px) {
-            nav { justify-content: center; padding: 15px; }
-            .nav-links { display: none; } /* Hide links for clean mobile look */
-            .logo { font-size: 1.2rem; }
+            nav { justify-content: center; padding: 18px 5%; }
+            .nav-links { display: none; }
+            .logo { font-size: 1.3rem; }
             
-            .hero { padding-top: 80px; text-align: center; }
-            .btn-container { flex-direction: column; align-items: center; }
-            .btn { width: 90%; max-width: 300px; }
+            .hero { padding-top: 100px; }
+            .hero p { margin-bottom: 35px; }
+            .btn-container { flex-direction: column; width: 100%; align-items: center; }
+            .btn { width: 85%; }
 
-            .game-grid { grid-template-columns: 1fr; } /* 1 Column on mobile */
-            .game-card { height: 380px; }
+            .game-grid { grid-template-columns: 1fr; }
+            .game-card { height: 420px; }
 
-            .music-control { bottom: 20px; left: 20px; height: 44px; padding: 0 15px; }
-            .music-label { display: none; } /* Icon only on mobile */
-            .wa-float { bottom: 20px; right: 20px; width: 54px; height: 54px; font-size: 26px; }
+            .music-control { bottom: 25px; left: 25px; height: 48px; padding: 0 18px; }
+            .music-label { display: none; }
+            .wa-float { bottom: 25px; right: 25px; width: 56px; height: 56px; font-size: 28px; }
 
-            .price-card { padding: 30px 20px; }
-            .modal-content { padding: 30px 20px; }
+            .price-card { padding: 40px 25px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .footer-brand p { margin: 20px auto 0; }
         }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -375,19 +413,19 @@
         <div class="loader-bar"><div class="loader-progress"></div></div>
     </div>
 
-    <!-- Music Toggle -->
+    <!-- Music Control -->
     <div class="music-control" id="music-btn" onclick="toggleMusic()">
         <i id="music-icon" class="fas fa-volume-mute"></i>
         <span class="music-label" id="music-status">Musik: OFF</span>
     </div>
     
-    <!-- Audio Source -->
+    <!-- Audio Source (Ambient Gaming Soundtrack) -->
     <audio id="bg-music" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/6282328437656" class="wa-float" target="_blank" aria-label="WhatsApp Admin">
+    <!-- Floating WA -->
+    <a href="https://wa.me/6282328437656" class="wa-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -395,96 +433,106 @@
     <nav>
         <a href="#" class="logo">ALEX<span>CLOUD</span></a>
         <ul class="nav-links">
-            <li><a href="#games">Library</a></li>
-            <li><a href="#keunggulan">Fitur</a></li>
-            <li><a href="#harga">Harga</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#games">Katalog</a></li>
+            <li><a href="#fitur">Teknologi</a></li>
+            <li><a href="#harga">Paket</a></li>
+            <li><a href="#faq">Bantuan</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <header class="hero">
-        <h1 class="reveal">Main Game Tanpa <br>Download di HP & PC</h1>
-        <p class="reveal">Bawa game AAA kemanapun kamu pergi. Dengan Alex Cloud Game, perangkat kentangmu berubah menjadi console gaming masa depan.</p>
+        <h1 class="reveal">Mainkan Game AAA <br>Tanpa Beban Hardware</h1>
+        <p class="reveal">Layanan Cloud Gaming Premium nomor satu di Indonesia. Nikmati FC 26, MotoGP 25, dan ratusan game console lainnya langsung di HP, Tablet, atau Laptop kentangmu.</p>
         <div class="btn-container reveal">
-            <button onclick="document.getElementById('harga').scrollIntoView()" class="btn btn-glow">Mulai Bermain</button>
-            <button onclick="document.getElementById('games').scrollIntoView()" class="btn btn-outline">Eksplor Library</button>
+            <button onclick="document.getElementById('harga').scrollIntoView()" class="btn btn-glow">Beli Paket Sekarang</button>
+            <button onclick="document.getElementById('games').scrollIntoView()" class="btn btn-outline">Lihat Daftar Game</button>
         </div>
     </header>
 
-    <!-- Game List -->
+    <!-- Games Section -->
     <section class="section" id="games">
         <div class="section-header reveal">
-            <h2>Library Game Premium</h2>
-            <p>Mainkan ratusan game terbaru melalui Amazon Luna.</p>
+            <h2>Katalog Game Terbaru</h2>
+            <p>Update mingguan! Judul-judul blockbuster kini siap dimainkan secara instan.</p>
         </div>
         <div class="game-grid">
+            <!-- Game 1 -->
             <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=600&auto=format&fit=crop" alt="FC 26" class="game-img">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop" alt="EA SPORTS FC 26" class="game-img">
                 <div class="game-overlay">
-                    <span class="game-tag ready">BARU: READY</span>
+                    <span class="game-tag ready">BARU: READY TO PLAY</span>
                     <h3>EA SPORTS FC 26</h3>
                 </div>
             </div>
+            <!-- Game 2 -->
             <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop" alt="FC 25" class="game-img">
+                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=800&auto=format&fit=crop" alt="EA SPORTS FC 25" class="game-img">
                 <div class="game-overlay">
                     <span class="game-tag">Populer</span>
                     <h3>EA SPORTS FC 25</h3>
                 </div>
             </div>
+            <!-- Game 3 -->
             <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=600&auto=format&fit=crop" alt="MotoGP 25" class="game-img">
+                <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=800&auto=format&fit=crop" alt="MotoGP 25" class="game-img">
                 <div class="game-overlay">
-                    <span class="game-tag ready">READY</span>
+                    <span class="game-tag ready">READY TO PLAY</span>
                     <h3>MotoGP 25</h3>
                 </div>
             </div>
+            <!-- Game 4 -->
             <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=600&auto=format&fit=crop" alt="Alan Wake 2" class="game-img">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=800&auto=format&fit=crop" alt="MotoGP 24" class="game-img">
                 <div class="game-overlay">
-                    <span class="game-tag ready">HIGH GRAPHICS</span>
-                    <h3>Alan Wake 2</h3>
-                </div>
-            </div>
-            <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=600&auto=format&fit=crop" alt="MotoGP 24" class="game-img">
-                <div class="game-overlay">
-                    <span class="game-tag">Top Choice</span>
+                    <span class="game-tag ready">READY</span>
                     <h3>MotoGP 24</h3>
                 </div>
             </div>
+            <!-- Game 5 -->
             <div class="game-card reveal">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop" alt="Library" class="game-img">
+                <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800&auto=format&fit=crop" alt="Alan Wake 2" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag ready">ULTRA GRAPHICS</span>
+                    <h3>Alan Wake 2</h3>
+                </div>
+            </div>
+            <!-- Game 6 -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="More Games" class="game-img">
                 <div class="game-overlay">
                     <span class="game-tag">Full Access</span>
-                    <h3>100+ Game Lainnya</h3>
+                    <h3>100+ Game Lainnya...</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Keunggulan -->
-    <section class="section" id="keunggulan" style="background: #080808;">
-        <div class="section-header reveal">
-            <h2>Kelebihan Alex Cloud</h2>
-            <p>Gaming tanpa batas, tanpa beban hardware.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-item reveal">
-                <i class="fas fa-bolt"></i>
-                <h3>Instan Play</h3>
-                <p>Klik dan mainkan. Tanpa harus menunggu download bergiga-giga.</p>
+    <!-- Why Amazon Luna? -->
+    <section class="section" id="fitur" style="background: #080808;">
+        <div class="info-box reveal">
+            <div class="info-content">
+                <h3>Apa itu Amazon Luna?</h3>
+                <p>Platform streaming game tercanggih dari Amazon yang memungkinkan Anda bermain game kualitas konsol di perangkat apapun. Anda tidak perlu mendownload file game yang berukuran ratusan GB.</p>
+                <p>Kami menyediakan akses premium sehingga Anda bisa bermain dengan kualitas Full HD dan frame rate yang sangat stabil.</p>
+                <div class="device-icons">
+                    <i class="fab fa-android"></i>
+                    <i class="fab fa-apple"></i>
+                    <i class="fas fa-desktop"></i>
+                    <i class="fas fa-tv"></i>
+                </div>
             </div>
-            <div class="feature-item reveal">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Adaptasi Device</h3>
-                <p>Mainkan di HP kentang atau PC kantor dengan performa yang sama.</p>
-            </div>
-            <div class="feature-item reveal">
-                <i class="fas fa-database"></i>
-                <h3>Hemat Memori</h3>
-                <p>Memori perangkatmu tetap lega karena game berjalan di server kami.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instan Play</h3>
+                    <p>Login dan mainkan. Tanpa install, tanpa update manual.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hdd"></i>
+                    <h3>Zero Storage</h3>
+                    <p>Hemat memori perangkat Anda hingga ratusan GB.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -492,40 +540,58 @@
     <!-- Pricing -->
     <section class="section" id="harga">
         <div class="section-header reveal">
-            <h2>Paket Akses</h2>
-            <p>Pilih paket bermain yang paling sesuai dengan kebutuhanmu.</p>
+            <h2>Pilih Paket Bermain</h2>
+            <p>Harga terjangkau dengan fasilitas premium tanpa batas.</p>
         </div>
         <div class="pricing-grid">
+            <!-- 1 Minggu -->
             <div class="price-card reveal">
-                <div class="price-name">Masa Trial</div>
+                <div class="price-name">Trial Access</div>
                 <div class="price-value">Rp40.000</div>
                 <ul class="price-features">
-                    <li><i class="fas fa-check-circle"></i> Akses 1 Minggu Full</li>
+                    <li><i class="fas fa-check-circle"></i> Akses 1 Minggu</li>
+                    <li><i class="fas fa-check-circle"></i> Library Full Access</li>
                     <li><i class="fas fa-check-circle"></i> Support 24/7</li>
-                    <li><i class="fas fa-check-circle"></i> Server Indonesia</li>
+                    <li><i class="fas fa-check-circle"></i> Kualitas HD</li>
                 </ul>
-                <button class="btn btn-outline btn-full" onclick="openPayment('1 Minggu', '40.000')">Pilih Paket</button>
+                <button class="btn btn-outline" onclick="openPayment('1 Minggu', '40.000')">Pilih Paket</button>
             </div>
+            <!-- 1 Bulan -->
             <div class="price-card popular reveal">
-                <div class="price-name">Paling Populer</div>
+                <div class="badge-popular">BEST SELLER</div>
+                <div class="price-name">Gamer Pro</div>
                 <div class="price-value">Rp60.000</div>
                 <ul class="price-features">
-                    <li><i class="fas fa-check-circle"></i> Akses 1 Bulan</li>
-                    <li><i class="fas fa-check-circle"></i> Kualitas HD Stream</li>
+                    <li><i class="fas fa-check-circle"></i> Akses 1 Bulan Full</li>
                     <li><i class="fas fa-check-circle"></i> Amazon Luna Premium</li>
+                    <li><i class="fas fa-check-circle"></i> Kualitas HD Stream</li>
                     <li><i class="fas fa-check-circle"></i> Support Prioritas</li>
                 </ul>
-                <button class="btn btn-glow btn-full" onclick="openPayment('1 Bulan', '60.000')">Beli Sekarang</button>
+                <button class="btn btn-glow" onclick="openPayment('1 Bulan', '60.000')">Beli Sekarang</button>
             </div>
+            <!-- 2 Bulan -->
             <div class="price-card reveal">
-                <div class="price-name">Hemat 3 Bulan</div>
+                <div class="price-name">Value Pack</div>
+                <div class="price-value">Rp100.000</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> Akses 2 Bulan</li>
+                    <li><i class="fas fa-check-circle"></i> Hemat Rp20.000</li>
+                    <li><i class="fas fa-check-circle"></i> Garansi Penuh</li>
+                    <li><i class="fas fa-check-circle"></i> Semua Perangkat</li>
+                </ul>
+                <button class="btn btn-outline" onclick="openPayment('2 Bulan', '100.000')">Pilih Paket</button>
+            </div>
+            <!-- 3 Bulan -->
+            <div class="price-card reveal">
+                <div class="price-name">Ultimate Access</div>
                 <div class="price-value">Rp150.000</div>
                 <ul class="price-features">
                     <li><i class="fas fa-check-circle"></i> Akses 3 Bulan Full</li>
                     <li><i class="fas fa-check-circle"></i> Hemat Rp30.000</li>
-                    <li><i class="fas fa-check-circle"></i> VIP Access</li>
+                    <li><i class="fas fa-check-circle"></i> VIP Support</li>
+                    <li><i class="fas fa-check-circle"></i> Multi-Device Login</li>
                 </ul>
-                <button class="btn btn-outline btn-full" onclick="openPayment('3 Bulan', '150.000')">Pilih Paket</button>
+                <button class="btn btn-outline" onclick="openPayment('3 Bulan', '150.000')">Pilih Paket</button>
             </div>
         </div>
     </section>
@@ -533,20 +599,20 @@
     <!-- FAQ -->
     <section class="section" id="faq">
         <div class="section-header reveal">
-            <h2>Pertanyaan Umum</h2>
+            <h2>Tanya Jawab</h2>
         </div>
         <div class="faq-container">
             <div class="faq-item reveal">
-                <div class="faq-question">Apakah saya butuh PC spek dewa? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Tidak sama sekali. Selama perangkatmu bisa membuka YouTube dengan lancar, kamu bisa menggunakan layanan kami.</div>
+                <div class="faq-question">Berapa kecepatan internet yang dibutuhkan? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Kami merekomendasikan koneksi internet stabil minimal 10-15 Mbps untuk kualitas HD yang lancar. Semakin stabil internet Anda, semakin rendah latensi inputnya.</div>
             </div>
             <div class="faq-item reveal">
-                <div class="faq-question">Bisa main di HP Android atau iPhone? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Sangat bisa! Cukup gunakan browser Chrome (Android) atau Safari (iOS) untuk masuk ke platform kami.</div>
+                <div class="faq-question">Apakah saya bisa main di iPhone? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Sangat bisa! Cukup gunakan Safari di iPhone Anda, masuk ke situs platform kami, dan Anda bisa mulai streaming game favorit secara langsung.</div>
             </div>
             <div class="faq-item reveal">
-                <div class="faq-question">Bagaimana cara transaksinya? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">Kamu bisa melakukan pembayaran via QRIS atau transfer, lalu konfirmasi ke WhatsApp admin untuk aktivasi instan.</div>
+                <div class="faq-question">Bagaimana cara menyambungkan controller? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Luna mendukung hampir semua controller Bluetooth seperti DualShock 4, Xbox Controller, atau controller HP lainnya. Anda juga bisa menggunakan kontrol layar sentuh di HP.</div>
             </div>
         </div>
     </section>
@@ -556,62 +622,63 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="#" class="logo">ALEX<span>CLOUD</span></a>
-                <p>Membawa teknologi Cloud Gaming kelas dunia untuk seluruh gamer di Indonesia. Main game tanpa batas!</p>
+                <p>Menghadirkan revolusi cloud gaming untuk seluruh gamer di Indonesia. Mainkan game kelas atas tanpa harus memiliki console mahal.</p>
             </div>
             <div class="footer-links">
-                <h4>Navigasi</h4>
+                <h4>Menu</h4>
                 <ul>
-                    <li><a href="#games">Katalog Game</a></li>
-                    <li><a href="#harga">Paket Harga</a></li>
+                    <li><a href="#games">Library Game</a></li>
+                    <li><a href="#harga">Harga Paket</a></li>
                     <li><a href="#faq">Bantuan FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Admin</h4>
+                <h4>Support</h4>
                 <ul>
-                    <li><a href="https://wa.me/6282328437656">WhatsApp Support</a></li>
+                    <li><a href="https://wa.me/6282328437656">WhatsApp Admin</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
                     <li><a href="#">Garansi Akun</a></li>
                 </ul>
             </div>
         </div>
-        <div class="copyright">&copy; 2024 Alex Cloud Game. High Performance Cloud Solutions.</div>
+        <div class="copyright">&copy; 2024 Alex Cloud Game. High Performance Gaming Solutions.</div>
     </footer>
 
     <!-- Payment Modal -->
     <div class="modal" id="paymentModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closePayment()">&times;</span>
-            <h3 id="modalTitle">Konfirmasi Pembelian</h3>
-            <p id="modalDesc" style="color:#666; margin-top:10px;"></p>
+            <h3 id="modalTitle">Konfirmasi Order</h3>
+            <p id="modalDesc" style="color:#666; margin-top:15px; font-size:1.1rem;"></p>
             
             <div class="pay-options">
                 <a href="#" id="waLink" class="pay-btn btn-wa" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat Admin WhatsApp
+                    <i class="fab fa-whatsapp"></i> Hubungi Admin di WhatsApp
                 </a>
                 <button class="pay-btn btn-qris" onclick="showQRIS()">
-                    <i class="fas fa-qrcode"></i> Scan QRIS (Otomatis)
+                    <i class="fas fa-qrcode"></i> Bayar via QRIS (Otomatis)
                 </button>
             </div>
 
             <div class="qris-display" id="qrisBox">
-                <p style="margin-bottom:15px; font-size:0.8rem; color: #fff;">Scan QR di bawah ini:</p>
+                <p style="margin-bottom:15px; font-size:0.9rem; color: #fff; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px;">Silakan Scan QRIS ini:</p>
                 <img src="https://img1.pixhost.to/images/5339/592942381_rizzhosting.jpg" alt="QRIS Alex Cloud Game">
-                <p style="margin-top:15px; font-size:0.75rem; color: #f1c40f;">*Kirim bukti bayar ke WA setelah transfer</p>
+                <p style="margin-top:15px; font-size:0.8rem; color: #f1c40f; font-weight: 700;">⚠️ WAJIB kirim bukti transfer ke WhatsApp admin!</p>
             </div>
         </div>
     </div>
 
     <script>
-        // --- Loader Logic ---
+        // --- Loader ---
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => loader.style.visibility = 'hidden', 1000);
-            }, 1800);
+            }, 2000);
         });
 
-        // --- Scroll Reveal Logic ---
+        // --- Scroll Reveal ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -624,29 +691,31 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Initial run
+        reveal();
 
-        // --- Music Controls (Improved for Adaptive) ---
+        // --- Music Controls ---
         const audio = document.getElementById('bg-music');
         const musicIcon = document.getElementById('music-icon');
         const musicStatus = document.getElementById('music-status');
         let isPlaying = false;
-        audio.volume = 0.25;
+        audio.volume = 0.2;
 
         function toggleMusic() {
             if (isPlaying) {
                 audio.pause();
                 musicIcon.className = 'fas fa-volume-mute';
                 musicStatus.innerText = "Musik: OFF";
+                musicStatus.style.color = "white";
             } else {
-                audio.play().catch(() => console.log("Play blocked."));
+                audio.play().catch(() => {});
                 musicIcon.className = 'fas fa-volume-up';
                 musicStatus.innerText = "Musik: ON";
+                musicStatus.style.color = "#3b82f6";
             }
             isPlaying = !isPlaying;
         }
 
-        // Auto-play trigger on first click
+        // Trigger music on first user interaction
         document.body.addEventListener('click', function() {
             if(!isPlaying) {
                 audio.play().then(() => {
@@ -658,7 +727,7 @@
             }
         }, { once: true });
 
-        // --- FAQ Toggle ---
+        // --- FAQ Logic ---
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
                 const item = q.parentElement;
@@ -668,16 +737,16 @@
             });
         });
 
-        // --- Modal Payment ---
+        // --- Payment Modal Logic ---
         const modal = document.getElementById('paymentModal');
         const waLink = document.getElementById('waLink');
         const qrisBox = document.getElementById('qrisBox');
 
         function openPayment(name, price) {
-            document.getElementById('modalTitle').innerText = "Detail Pembelian";
-            document.getElementById('modalDesc').innerHTML = `Paket: <strong>${name}</strong> | Harga: <strong>${price}</strong>`;
+            document.getElementById('modalTitle').innerText = "Konfirmasi Pesanan";
+            document.getElementById('modalDesc').innerHTML = `Paket: <strong>${name}</strong><br>Total Bayar: <strong>Rp${price}</strong>`;
             
-            const msg = encodeURIComponent(`Halo admin, saya ingin order paket ${name} (Alex Cloud Game) seharga ${price}. Bagaimana prosesnya?`);
+            const msg = encodeURIComponent(`Halo admin, saya ingin membeli paket ${name} di Alex Cloud Game seharga Rp${price}. Mohon bantuannya untuk langkah aktivasi.`);
             waLink.href = `https://wa.me/6282328437656?text=${msg}`;
             
             modal.style.display = 'flex';

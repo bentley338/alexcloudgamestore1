@@ -672,9 +672,391 @@
     </div>
 
     <!-- Music Controller -->
-    <div class="music-control" onclick="toggleMusic()">
+    <div class="music-control" id="music-btn" onclick="toggleMusic()">
         <i id="music-icon" class="fas fa-volume-mute"></i>
         <span class="music-label" id="music-status">OFF</span>
     </div>
-    <!-- No Royalty Background Music (Cinematic Gaming Mix) -->
-    <au
+    
+    <!-- No Royalty Background Music (Gaming / Electronic Chill) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating WA -->
+    <a href="https://wa.me/6282328437656" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#" class="logo">ALEX<span>CLOUD</span></a>
+        <ul class="nav-links">
+            <li><a href="#games">Library</a></li>
+            <li><a href="#keunggulan">Fitur</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#cara">Panduan</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#harga" class="btn btn-glow" style="padding: 10px 25px; font-size: 0.8rem;">GET ACCESS</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1 class="reveal">Cloud Gaming <br>Premium Tanpa Lag</h1>
+        <p class="reveal">Mainkan FC 26, MotoGP 25, dan Alan Wake 2 langsung di HP atau Laptop kentangmu. Spek dewa bukan lagi syarat untuk jadi juara.</p>
+        <div class="btn-container reveal">
+            <button onclick="document.getElementById('harga').scrollIntoView()" class="btn btn-glow">Beli Paket Sekarang</button>
+            <button onclick="document.getElementById('games').scrollIntoView()" class="btn btn-outline">Eksplor Library Game</button>
+        </div>
+    </header>
+
+    <!-- Game List -->
+    <section class="section" id="games">
+        <div class="section-header reveal">
+            <h2 style="letter-spacing: -1px;">Premium Library</h2>
+            <p>Update terbaru! Semua game blockbuster kini tersedia di ujung jarimu.</p>
+        </div>
+        <div class="game-grid">
+            <!-- Game 1: FC 26 (READY) -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1000&auto=format&fit=crop" alt="FC 26" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag ready">READY TO PLAY</span>
+                    <h3>EA SPORTS FC 26</h3>
+                </div>
+            </div>
+            <!-- Game 2: FC 25 -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop" alt="FC 25" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag">Trending</span>
+                    <h3>EA SPORTS FC 25</h3>
+                </div>
+            </div>
+            <!-- Game 3: MotoGP 25 -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=1000&auto=format&fit=crop" alt="MotoGP 25" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag ready">READY TO PLAY</span>
+                    <h3>MotoGP 25</h3>
+                </div>
+            </div>
+             <!-- Game 4: MotoGP 24 -->
+             <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1000&auto=format&fit=crop" alt="MotoGP 24" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag ready">READY TO PLAY</span>
+                    <h3>MotoGP 24</h3>
+                </div>
+            </div>
+            <!-- Game 5: Alan Wake 2 -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000&auto=format&fit=crop" alt="Alan Wake 2" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag ready">BEST VISUALS</span>
+                    <h3>Alan Wake 2</h3>
+                </div>
+            </div>
+            <!-- Game 6: More Games -->
+            <div class="game-card reveal">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop" alt="And Many More" class="game-img">
+                <div class="game-overlay">
+                    <span class="game-tag">100+ Games</span>
+                    <h3>And Many More...</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section class="section" id="keunggulan" style="background: #080808;">
+        <div class="section-header reveal">
+            <h2>Dominasi Setiap Sesi</h2>
+            <p>Teknologi cloud masa depan untuk performa tanpa hambatan.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item reveal">
+                <i class="fas fa-cloud-download-alt"></i>
+                <h3>Instan Play</h3>
+                <p>Klik dan langsung main. Lupakan antrian download yang lama.</p>
+            </div>
+            <div class="feature-item reveal">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Cross Platform</h3>
+                <p>Mulai di PC rumah, lanjutkan di smartphone saat perjalanan.</p>
+            </div>
+            <div class="feature-item reveal">
+                <i class="fas fa-hdd"></i>
+                <h3>Zero Storage</h3>
+                <p>Hemat ratusan GB. Semua data tersimpan aman di server kami.</p>
+            </div>
+            <div class="feature-item reveal">
+                <i class="fas fa-bolt"></i>
+                <h3>Low Latency</h3>
+                <p>Optimasi server terbaik untuk respon input secepat kilat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="harga">
+        <div class="section-header reveal">
+            <h2>Mulai Petualanganmu</h2>
+            <p>Pilih paket akses yang sesuai dengan gaya bermainmu.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card reveal">
+                <div class="price-name">Trial Week</div>
+                <div class="price-value">Rp40.000</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> Akses 1 Minggu</li>
+                    <li><i class="fas fa-check-circle"></i> Library Full Access</li>
+                    <li><i class="fas fa-check-circle"></i> Support 24/7</li>
+                </ul>
+                <button class="btn btn-outline btn-full" onclick="openPayment('1 Minggu', '40.000')">Pilih Paket</button>
+            </div>
+            <div class="price-card popular reveal">
+                <div style="position:absolute; top:15px; right:-35px; background:var(--accent-color); padding:5px 40px; transform:rotate(45deg); font-size:0.7rem; font-weight:bold; color:white;">BEST VALUE</div>
+                <div class="price-name">Pro Monthly</div>
+                <div class="price-value">Rp60.000</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> Akses 1 Bulan</li>
+                    <li><i class="fas fa-check-circle"></i> Amazon Luna Premium</li>
+                    <li><i class="fas fa-check-circle"></i> Kualitas HD Stream</li>
+                    <li><i class="fas fa-check-circle"></i> Support Prioritas</li>
+                </ul>
+                <button class="btn btn-glow btn-full" onclick="openPayment('1 Bulan', '60.000')">Beli Sekarang</button>
+            </div>
+            <div class="price-card reveal">
+                <div class="price-name">Double Fun</div>
+                <div class="price-value">Rp100.000</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> Akses 2 Bulan</li>
+                    <li><i class="fas fa-check-circle"></i> Lebih Hemat Rp20rb</li>
+                    <li><i class="fas fa-check-circle"></i> Support 24/7</li>
+                </ul>
+                <button class="btn btn-outline btn-full" onclick="openPayment('2 Bulan', '100.000')">Pilih Paket</button>
+            </div>
+            <div class="price-card reveal">
+                <div class="price-name">Ultimate Pro</div>
+                <div class="price-value">Rp150.000</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> Akses 3 Bulan</li>
+                    <li><i class="fas fa-check-circle"></i> Paket Paling Hemat</li>
+                    <li><i class="fas fa-check-circle"></i> VIP Community Support</li>
+                </ul>
+                <button class="btn btn-outline btn-full" onclick="openPayment('3 Bulan', '150.000')">Pilih Paket</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="section" id="cara" style="background: #080808;">
+        <div class="section-header reveal">
+            <h2>Panduan Cepat</h2>
+            <p>Hanya 3 langkah menuju kemenangan.</p>
+        </div>
+        <div class="step-container">
+            <div class="step reveal">
+                <div class="step-num">1</div>
+                <div>
+                    <h3>Dapatkan Akses</h3>
+                    <p>Beli paket dan admin kami akan memberikan detail login Amazon Luna premium Anda.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">2</div>
+                <div>
+                    <h3>Login & Pilih Game</h3>
+                    <p>Buka platform Luna, pilih FC 26, MotoGP atau Alan Wake 2 di library.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">3</div>
+                <div>
+                    <h3>Mainkan Sekarang</h3>
+                    <p>Sambungkan gamepad atau mainkan via touchscreen. Nikmati kualitas gaming maksimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="section-header reveal">
+            <h2>F.A.Q</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item reveal">
+                <div class="faq-question">Apakah saya butuh akun EA? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Untuk FC 26 dan game EA lainnya, Anda bisa menautkan akun EA pribadi Anda untuk menyimpan semua progress dan data permainan.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Apakah koneksi seluler cukup? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Koneksi 4G/5G stabil sudah cukup untuk bermain, namun kami menyarankan menggunakan Wi-Fi 5GHz untuk latensi yang paling rendah.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Apakah ada garansi? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Tentu! Kami memberikan garansi penuh selama masa langganan aktif. Jika ada kendala login, admin siap membantu 24/7.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">ALEX<span>CLOUD</span></a>
+                <p>Platform Cloud Gaming Premium pertama di Indonesia yang menghadirkan pengalaman bermain game AAA kelas dunia tanpa beban hardware.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#games">Library Game</a></li>
+                    <li><a href="#harga">Harga Paket</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://wa.me/6282328437656"><i class="fab fa-whatsapp"></i> WhatsApp Admin</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> help@alexcloud.gg</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Alex Cloud Game. High-Performance Gaming for Everyone.
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePayment()">&times;</span>
+            <h3 id="modalTitle">Konfirmasi Pembelian</h3>
+            <p id="modalDesc" style="color:#888; margin-top:15px;"></p>
+            
+            <div class="pay-options">
+                <a href="#" id="waLink" class="pay-btn btn-wa" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Beli via WhatsApp
+                </a>
+                <button class="pay-btn btn-qris" onclick="showQRIS()">
+                    <i class="fas fa-qrcode"></i> Lihat Kode QRIS
+                </button>
+            </div>
+
+            <div class="qris-display" id="qrisBox">
+                <p style="margin-bottom:20px; font-size:0.9rem; color: #fff;">Scan QRIS di bawah ini:</p>
+                <img src="https://img1.pixhost.to/images/5339/592942381_rizzhosting.jpg" alt="QRIS Alex Cloud Game">
+                <p style="margin-top:20px; font-size:0.8rem; color: #f1c40f; font-weight: 600;">⚠️ Harap kirimkan bukti transfer ke WhatsApp admin.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- LOADER ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.visibility = 'hidden';
+                }, 1000);
+            }, 2000);
+        });
+
+        // --- SCROLL REVEAL ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 80;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // --- MUSIC LOGIC (REPAIRED) ---
+        const audio = document.getElementById('bg-music');
+        const musicIcon = document.getElementById('music-icon');
+        const musicStatus = document.getElementById('music-status');
+        let isPlaying = false;
+        audio.volume = 0.2;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove('fa-volume-up');
+                musicIcon.classList.add('fa-volume-mute');
+                musicStatus.innerText = "OFF";
+                musicStatus.style.color = "#888";
+            } else {
+                audio.play().catch(e => {
+                    console.log("Audio play prevented by browser. Click anywhere to start.");
+                });
+                musicIcon.classList.remove('fa-volume-mute');
+                musicIcon.classList.add('fa-volume-up');
+                musicStatus.innerText = "ON";
+                musicStatus.style.color = "#3b82f6";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // AUTO-START ON FIRST INTERACTION
+        // Browser modern melarang audio berputar sebelum ada klik dari user.
+        // Skrip ini memicu audio di klik pertama user jika belum menyala.
+        document.body.addEventListener('click', function() {
+            if(!isPlaying) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    musicIcon.classList.remove('fa-volume-mute');
+                    musicIcon.classList.add('fa-volume-up');
+                    musicStatus.innerText = "ON";
+                    musicStatus.style.color = "#3b82f6";
+                }).catch(e => {});
+            }
+        }, { once: true });
+
+        // --- FAQ ---
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // --- PAYMENT ---
+        const modal = document.getElementById('paymentModal');
+        const waLink = document.getElementById('waLink');
+        const qrisBox = document.getElementById('qrisBox');
+
+        function openPayment(name, price) {
+            document.getElementById('modalTitle').innerText = "Konfirmasi Paket";
+            document.getElementById('modalDesc').innerHTML = `Paket Terpilih: <strong>${name}</strong><br>Harga: <strong>${price}</strong>`;
+            
+            const message = encodeURIComponent(`Halo admin, saya ingin membeli paket ${name} di Alex Cloud Game seharga ${price}.`);
+            waLink.href = `https://wa.me/6282328437656?text=${message}`;
+            
+            modal.style.display = 'flex';
+            qrisBox.style.display = 'none';
+        }
+
+        function closePayment() {
+            modal.style.display = 'none';
+        }
+
+        function showQRIS() {
+            qrisBox.style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) closePayment();
+        }
+    </script>
+</body>
+</html>
